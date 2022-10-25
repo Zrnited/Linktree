@@ -1,0 +1,8 @@
+.hidebar {
+  top: -100%;
+}
+
+.showbar {
+  top: 0;
+  transition: 450ms;
+}
