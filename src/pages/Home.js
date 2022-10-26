@@ -8,6 +8,9 @@ import slackicon from '../assets/slackicon.png'
 import zurilogo from '../assets/zurilogo.png';
 import zurisecondlogo from '../assets/secondloogo.png';
 import { AiOutlineClose } from 'react-icons/ai';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 
 const Home = () => {
 
@@ -16,7 +19,7 @@ const Home = () => {
   if(sidebar){
     document.body.classList.add('hide')
   } else {
-    document.body.classList.remove('hide');
+    document.body.classList.remove('hide')
   }
 
   window.addEventListener('resize', ()=>{
@@ -24,6 +27,10 @@ const Home = () => {
       setSidebar(false);
     }
   })
+
+  React.useEffect(()=>{
+    Aos.init({ duration: 1000 });
+  }, [])
 
   return (
     <div className='flex flex-col items-center pt-16 gap-5 pb-10 z-20'>
@@ -113,33 +120,34 @@ const Home = () => {
       <div className='w-full flex flex-col justify-center items-center gap-7 lg:mt-5'>
         {links.map((link, index)=>{
           return (
-            <div key={index} className='bg-gray200 w-90 text-center cursor-default text-base font-semibold flex flex-col items-center gap-2 py-6 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 hover:border-solid hover:border hover:border-gray-400 lg:w-85'>
+            <motion.div whileHover={{scale: 1.1}} key={index} data-aos='fade-up' className='bg-gray200 w-90 text-center cursor-default text-base font-semibold flex flex-col items-center gap-2 py-6 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 hover:border-solid hover:border hover:border-gray-400 lg:w-85'>
               <button id={link.id}>
                 <a href={link.link} rel='noreferrer' target={'_blank'} className='tracking-wide hover:opacity-75 transition ease-in-out delay-100 sm:text-lg md:text-xl'>{link.name}</a>
               </button>
               {link.additionalText && <p className='text-xs w-3/4 sm:text-sm md:text-base'>{link.additionalText}</p>}
-            </div>
+            </motion.div>
           )
         })}
       </div>
 
       {/* ADD SOCIAL MEDIA LINKS DIV AND A FOOTER */}
-      <div className='hidden sm:flex sm:flex-row gap-5'>
-        <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
-          <img 
-            id='slack'
-            src={slackicon}
-            alt='git-icon'
-          />
-        </a>
-       
-        <a href='https://github.com/Zrnited'target="_blank" rel="noreferrer">
-          <img 
-            src={giticon}
-            alt='slack-icon'
-          />
-        </a>
-      </div>
+        <div data-aos='flip-left' className='hidden sm:flex sm:flex-row gap-5'>
+          <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
+            <img 
+              id='slack'
+              src={slackicon}
+              alt='git-icon'
+            />
+          </a>
+        
+          <a href='https://github.com/Zrnited'target="_blank" rel="noreferrer">
+            <img 
+              src={giticon}
+              alt='slack-icon'
+            />
+          </a>
+        </div>
+      
 
       <footer className='hidden sm:flex sm:flex-col w-90 mt-20'>
         <div className='w-full h-2 bg-gray200 mb-4'></div>
