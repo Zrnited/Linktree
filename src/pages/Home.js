@@ -14,6 +14,8 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
 
+  const slackUsername = 'kolawoleMayowa';
+
   const [sidebar, setSidebar] = React.useState(false);
 
   if(sidebar){
@@ -37,7 +39,7 @@ const Home = () => {
 
       {/* SIDEBAR */}
 
-      <div className={!sidebar ? 'hidebar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex' : 'showbar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex'}>
+      <aside className={!sidebar ? 'hidebar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex' : 'showbar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex'}>
         <div className='w-full flex flex-row justify-end'>
           <button 
             className='bg-gray-100 border border-gray-400 text-black text-base rounded-full p-2 bg-white font-semibold hover:bg-gray-200 text-xl hover:border hover:border-gray-500 hover:text-gray-500 hover:rounded-full transition ease-in-out delay-100'
@@ -46,7 +48,7 @@ const Home = () => {
               <AiOutlineClose />
           </button>
         </div>
-        <h1 className='text-black uppercase'>app designed by zrnited</h1>
+        <h1 className='text-black uppercase'>app designed by kolawole mayowa</h1>
         
           <div className='flex flex-row gap-5 mt-5'>
             <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
@@ -90,7 +92,7 @@ const Home = () => {
           </div>
           <p className='text-base mt-2'>HNG Internship 9 Frontend Task</p>
         </div>
-      </div>
+      </aside>
 
       {/* SIDEBAR ENDS */}
 
@@ -104,6 +106,8 @@ const Home = () => {
         <IoMdShareAlt />
       </div>
 
+      {/* PROFILE SECTION */}
+
       <div>
         <img 
           id='profile_img'
@@ -116,6 +120,8 @@ const Home = () => {
       <div> 
         <h1 id='twitter' className='font-bold text-18 lg:text-xl'> Kolawole Mayowa </h1> 
       </div>
+
+      {/* PROFILE SECTION ENDS */}
 
       <div className='w-full flex flex-col justify-center items-center gap-7 lg:mt-5'>
         {links.map((link, index)=>{
@@ -132,7 +138,7 @@ const Home = () => {
 
       {/* ADD SOCIAL MEDIA LINKS DIV AND A FOOTER */}
         <div data-aos='flip-left' className='hidden sm:flex sm:flex-row gap-5'>
-          <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
+          <a href='https://slack.com/kolamayh' target={'_blank'} rel="noreferrer">
             <img 
               id='slack'
               src={slackicon}
