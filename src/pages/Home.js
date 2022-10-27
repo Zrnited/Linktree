@@ -127,10 +127,8 @@ const Home = () => {
         {links.map((link, index)=>{
           return (
             <motion.div whileHover={{scale: 1.1}} key={index} data-aos='fade-up' className='bg-gray200 w-90 text-center cursor-default text-base font-semibold flex flex-col items-center gap-2 py-6 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 hover:border-solid hover:border hover:border-gray-400 lg:w-85'>
-              <button id={link.id}>
-                <a href={link.link} rel='noreferrer' target={'_blank'} className='tracking-wide hover:opacity-75 transition ease-in-out delay-100 sm:text-lg md:text-xl'>{link.name}</a>
-              </button>
-              {link.additionalText && <p className='text-xs w-3/4 sm:text-sm md:text-base'>{link.additionalText}</p>}
+              
+            <a id={link.id} href={link.link} rel='noreferrer' target={'_blank'} className='tracking-wide hover:opacity-75 transition ease-in-out delay-100 sm:text-lg md:text-xl'>{link.name}</a>
             </motion.div>
           )
         })}
