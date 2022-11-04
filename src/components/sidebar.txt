@@ -1,0 +1,58 @@
+      {/* SIDEBAR */}
+
+      {/* <aside className={!sidebar ? 'hidebar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex' : 'showbar w-full fixed top-0 right-0 left-0 h-auto bg-black z-10 flex flex-col items-center bg-gray-100 p-5 border shadow flex'}>
+        <div className='w-full flex flex-row justify-end'>
+          <button 
+            className='bg-gray-100 border border-gray-400 text-black text-base rounded-full p-2 bg-white font-semibold hover:bg-gray-200 text-xl hover:border hover:border-gray-500 hover:text-gray-500 hover:rounded-full transition ease-in-out delay-100'
+              onClick={()=>setSidebar(!sidebar)}
+            >
+              <AiOutlineClose />
+          </button>
+        </div>
+        <h1 className='text-black uppercase'>app designed by kolawole mayowa</h1>
+        
+          <div className='flex flex-row gap-5 mt-5'>
+            <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
+              <img 
+                id='slack'
+                src={slackicon}
+                alt='git-icon'
+              />
+            </a>
+          
+            <a href='https://github.com/Zrnited'target="_blank" rel="noreferrer">
+              <img 
+                src={giticon}
+                alt='slack-icon'
+              />
+            </a>
+        </div>
+
+        <div className='w-full flex flex-col justify-center items-center gap-2'>
+          <div className='w-full h-2 bg-gray-500 mt-4'></div>
+          <div className='flex flex-row w-90 items-center justify-center gap-4'>
+            <div className='w-1/2 flex justify-center items-center'>
+              <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
+                <img 
+                  src={zurilogo}
+                  alt='zuri-logo'
+                  className='w-2/3'
+                />
+              </a>
+            </div>
+            
+            <div className='w-1/2 flex justify-end items-center'>
+              <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
+                <img 
+                  src={zurisecondlogo}
+                  alt='zuri-logo'
+                  className='w-2/3'
+                />
+              </a>
+            </div>
+          </div>
+          <p className='text-base mt-2'>HNG Internship 9 Frontend Task</p>
+        </div>
+      </aside> */}
+
+      {/* SIDEBAR ENDS */}
