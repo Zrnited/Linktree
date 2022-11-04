@@ -164,7 +164,7 @@ const Contact = () => {
                             <img 
                             src={zurilogo}
                             alt='zuri-logo'
-                            className=''
+                            className='w-4/5 sm:w-full'
                             />
                         </a>
                         </div>
@@ -176,7 +176,7 @@ const Contact = () => {
                             <img 
                             src={zurisecondlogo}
                             alt='zuri-logo'
-                            className=''
+                            className='w-4/5 sm:w-full'
                             />
                         </a>
                         </div>
