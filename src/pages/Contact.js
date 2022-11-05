@@ -169,7 +169,7 @@ const Contact = () => {
             <div className='w-full h-auto z-10 flex flex-col items-center p-5'>
                 <div className='w-full flex flex-col justify-center items-center gap-2'>
                     <div className='w-full h-2 bg-gray-300 mt-4'></div>
-                    <div className='flex flex-col w-90 items-start gap-2 md:flex-row md:items-center md:justify-evenly'>
+                    <div className='flex flex-col w-90 items-start gap-2 md:flex-row md:items-center md:justify-between'>
                         <div className=''>
                         <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
                             <img 

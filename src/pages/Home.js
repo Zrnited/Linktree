@@ -84,7 +84,7 @@ const Home = () => {
       </div>
 
       {/* ADD SOCIAL MEDIA LINKS DIV AND A FOOTER */}
-        <div className='hidden sm:flex sm:flex-row gap-5'>
+        <div className='flex flex-row gap-5'>
           <a href='https://slack.com/kolamayh' target={'_blank'} rel="noreferrer">
             <img 
               id='slack'
@@ -100,77 +100,36 @@ const Home = () => {
             />
           </a>
         </div>
-      
 
-      <footer className='hidden sm:flex sm:flex-col w-90 mt-20'>
-        <div className='w-full h-2 bg-gray200 mb-4'></div>
-        <div className='sm:flex sm:flex-row w-full gap-4 items-center justify-between'>
-          <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
-            <img 
-              src={zurilogo}
-              alt='zuri-logo'
-              className='sm:w-4/5 lg:w-full'
-            />
-          </a>
-          <p className='lg:text-lg'>HNG Internship 9 Frontend Task</p>
-          <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
-            <img 
-              src={zurisecondlogo}
-              alt='zuri-logo'
-              className='sm:w-4/5 lg:w-full'
-            />
-          </a>
-        </div>
-      </footer>
+      <footer className='flex w-full mt-12'>
+            <div className='w-full h-auto z-10 flex flex-col items-center p-5'>
+                <div className='w-full flex flex-col justify-center items-center gap-2'>
+                    <div className='w-full h-2 bg-gray-300 mt-4'></div>
+                    <div className='flex flex-col w-90 items-start gap-2 md:flex-row md:items-center md:justify-between'>
+                        <div className=''>
+                        <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
+                            <img 
+                            src={zurilogo}
+                            alt='zuri-logo'
+                            className='w-4/5 sm:w-full'
+                            />
+                        </a>
+                        </div>
 
-      <footer className='flex w-full sm:hidden '>
-        <div className={'hidebar w-full h-auto z-10 flex flex-col items-center p-5'}>
-          <div className='w-full flex flex-row justify-end'>
-            </div>
-
-              <div className='flex flex-row gap-5 mt-5'>
-                <a href='https://slack.com/Mayowa' target={'_blank'} rel="noreferrer">
-                  <img 
-                    id='slack'
-                    src={slackicon}
-                    alt='git-icon'
-                  />
-                </a>
-              
-                <a href='https://github.com/Zrnited'target="_blank" rel="noreferrer">
-                  <img 
-                    src={giticon}
-                    alt='slack-icon'
-                  />
-                </a>
-            </div>
-
-            <div className='w-full flex flex-col justify-center items-center gap-2'>
-              <div className='w-full h-2 bg-gray-500 mt-4'></div>
-              <div className='flex flex-row w-90 items-center justify-center gap-4'>
-                <div className='w-1/2 flex justify-center items-center'>
-                  <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
-                    <img 
-                      src={zurilogo}
-                      alt='zuri-logo'
-                      className='w-2/3'
-                    />
-                  </a>
+                        <p className='text-base'>HNG Internship 9 Frontend Task</p>
+                        
+                        <div className=''>
+                        <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
+                            <img 
+                            src={zurisecondlogo}
+                            alt='zuri-logo'
+                            className='w-4/5 sm:w-full'
+                            />
+                        </a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div className='w-1/2 flex justify-end items-center'>
-                  <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>
-                    <img 
-                      src={zurisecondlogo}
-                      alt='zuri-logo'
-                      className='w-2/3'
-                    />
-                  </a>
-                </div>
-              </div>
-              <p className='text-base mt-2'>HNG Internship 9 Frontend Task</p>
             </div>
-        </div>
       </footer>
     </div>
   )
