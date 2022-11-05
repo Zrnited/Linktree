@@ -50,7 +50,7 @@ const Home = () => {
       </div>
 
       <div> 
-        <h1 id='twitter' className='font-bold text-18 lg:text-xl'> Kolawole Mayowa </h1> 
+        <h1 id='twitter' className='font-extrabold text-18 lg:text-xl'> Kolawole Mayowa </h1> 
         <h1 id='slack' className='hidden'> Kolawole Mayowa </h1> 
       </div>
 
@@ -66,7 +66,7 @@ const Home = () => {
                 key={index}
                 rel='noreferrer' 
                 target={'_blank'} 
-                className='cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
+                className='inter500 cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
                 >
                   {link.name}
               </motion.a>
@@ -76,7 +76,7 @@ const Home = () => {
         <motion.a 
           href='/contact'
           id='contact'
-          className='cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
+          className='inter500 cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
           whileHover={{scale: 0.9}}
         >
           Contact
@@ -116,7 +116,7 @@ const Home = () => {
                         </a>
                         </div>
 
-                        <p className='text-base'>HNG Internship 9 Frontend Task</p>
+                        <p className='inter400 text-base'>HNG Internship 9 Frontend Task</p>
                         
                         <div className=''>
                         <a href='https://zuri.com' target={'_blank'} rel='noreferrer'>

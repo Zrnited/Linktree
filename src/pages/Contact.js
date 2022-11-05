@@ -88,12 +88,12 @@ const Contact = () => {
         <ToastContainer />
         <div className='w-90 flex flex-col place-self-center mt-12 md:max-w-750'>
             <h1 className='text-3xl tracking-wide mb-3 font-bold'>Contact Me</h1>
-            <p className='text-gray-500 mb-8'>Hi there, contact me to ask me about anything you have in mind</p>
+            <p className='text-gray-500 mb-8 inter400'>Hi there, contact me to ask me about anything you have in mind</p>
 
             <form onSubmit={handleSubmit} className='flex flex-col gap-5 mb-5'>
                 <div className='flex flex-col gap-5 md:flex-row'>
                     <div className='flex flex-col md:w-full'>
-                        <label className='mb-1'>First name</label>
+                        <label className='mb-1 inter500'>First name</label>
                         <input 
                             type={'text'}
                             id='first_name'
@@ -106,7 +106,7 @@ const Contact = () => {
                         <p className='text-red-500 italic'>{formErrors?.firstName}</p>
                     </div>
                     <div className='flex flex-col md:w-full'>
-                        <label className='mb-1'>Last name</label>
+                        <label className='mb-1 inter500'>Last name</label>
                         <input 
                             type={'text'}
                             id='last_name'
@@ -120,7 +120,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='mb-1'>Email</label>
+                    <label className='mb-1 inter500'>Email</label>
                     <input 
                         type={'text'}
                         id='email'
@@ -133,7 +133,7 @@ const Contact = () => {
                     <p className='text-red-500 italic'>{formErrors.email}</p>
                 </div>
                 <div className='flex flex-col'>
-                    <label className='mb-1'>Message</label>
+                    <label className='mb-1 inter500'>Message</label>
                     <textarea 
                         type={'textbox'}
                         id='message'
@@ -153,7 +153,7 @@ const Contact = () => {
                         name='isAgreed'
                         className='checkbox'
                     />
-                    <label className='text-sm'>You agree to providing your data to Kolawole Mayowa who may contact you.<strong className='text-red-500'> { formErrors.isAgreed}</strong></label>
+                    <label className='text-sm inter400'>You agree to providing your data to Kolawole Mayowa who may contact you.<strong className='text-red-500'> { formErrors.isAgreed}</strong></label>
                 </div>
 
                 <button 
