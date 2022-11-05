@@ -3,6 +3,8 @@ import zurilogo from '../assets/zurilogo.png';
 import zurisecondlogo from '../assets/secondloogo.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
 
@@ -35,10 +37,18 @@ const Contact = () => {
 
     useEffect(()=>{
         if(Object.keys(formErrors).length === 0 && isSubmit === true){
-            alert('Thanks for contacting us. We will be getting back to you as soon as possible.');
-            setInterval(()=>{
-                window.location = '/'
-            }, 1000)
+            setForm((prevState)=>{
+                return {
+                    ...prevState,
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    message: '',
+                    isAgreed: false
+
+                }
+            })
+            toast.success('form submitted');
         }
     }, [formErrors])
 
@@ -75,11 +85,12 @@ const Contact = () => {
 
   return (
     <div className='w-full h-full flex flex-col justify-center mb-5'>
+        <ToastContainer />
         <div className='w-90 flex flex-col place-self-center mt-12 md:max-w-750'>
             <h1 className='text-3xl tracking-wide mb-3 font-bold'>Contact Me</h1>
             <p className='text-gray-500 mb-8'>Hi there, contact me to ask me about anything you have in mind</p>
 
-            <form onSubmit={handleSubmit} className='flex flex-col gap-5 mb-20'>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-5 mb-5'>
                 <div className='flex flex-col gap-5 md:flex-row'>
                     <div className='flex flex-col md:w-full'>
                         <label className='mb-1'>First name</label>
@@ -154,7 +165,7 @@ const Contact = () => {
             </form>
         </div>
 
-        <footer className='flex w-full'>
+        <footer className='flex w-full mt-12'>
             <div className='w-full h-auto z-10 flex flex-col items-center p-5'>
                 <div className='w-full flex flex-col justify-center items-center gap-2'>
                     <div className='w-full h-2 bg-gray-300 mt-4'></div>
