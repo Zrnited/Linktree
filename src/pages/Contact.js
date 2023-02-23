@@ -145,7 +145,7 @@ const Contact = () => {
                     />
                     <p className='text-red-500 italic'>{formErrors.message}</p>
                 </div>
-                <div className='flex flex-row gap-2 place-self-center'>
+                <div className='flex flex-row gap-2 place-self-left'>
                     <input 
                         type={'checkbox'}
                         checked={form.isAgreed}

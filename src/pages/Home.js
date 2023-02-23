@@ -66,7 +66,7 @@ const Home = () => {
                 key={index}
                 rel='noreferrer' 
                 target={'_blank'} 
-                className='inter500 cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
+                className='inter500 cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-lg lg:py-6'
                 >
                   {link.name}
               </motion.a>
@@ -80,6 +80,14 @@ const Home = () => {
           whileHover={{scale: 0.9}}
         >
           Contact
+        </motion.a>
+        <motion.a 
+          href='/livesite'
+          id='contact'
+          className='inter500 cursor-pointer tracking-wide hover:opacity-75 bg-gray200 w-90 text-center text-base font-semibold flex flex-col items-center gap-2 py-4 rounded-lg hover:bg-gray300 transition ease-in-out delay-100 lg:w-85 sm:text-lg md:text-xl lg:py-6'
+          whileHover={{scale: 0.9}}
+        >
+          Live Site
         </motion.a>
       </div>
 
