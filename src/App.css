@@ -1,3 +1,8 @@
+body {
+  scroll-behavior: smooth;
+  padding-bottom: 300px;
+}
+
 .hidebar {
   top: -100%;
 }
