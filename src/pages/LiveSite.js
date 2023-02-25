@@ -115,12 +115,17 @@ const LiveSite = () => {
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:gap-3 sm:items-start sm:justify-around">
           {expertise?.map((item) => {
             return (
-              <motion.div whileHover={{scale: 1.1}} className="flex flex-col gap-3 items-center max-w-300 cursor-pointer sm:max-w-200 sm:items-start hover:shadow-md">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="flex flex-col gap-3 items-center max-w-300 cursor-pointer sm:max-w-200 sm:items-start hover:shadow-md"
+              >
                 <div className="flex gap-2 items-center">
                   <button className={item.className}>
                     <i>{item.icon}</i>
                   </button>
-                  <p className="text-base font-bold md:text-lg">{item.header}</p>
+                  <p className="text-base font-bold md:text-lg">
+                    {item.header}
+                  </p>
                 </div>
                 <p className="text-center sm:text-left sm:text-sm md:text-base">
                   {item.undertext}
@@ -132,7 +137,9 @@ const LiveSite = () => {
       </section>
 
       <section className="px-6 mt-10">
-        <h1 className="text-center font-bold text-2xl sm:text-left ml-12 md:text-4xl">Recently added courses</h1>
+        <h1 className="text-center font-bold text-2xl sm:text-left ml-12 md:text-4xl">
+          Recently added courses
+        </h1>
       </section>
     </>
   );
