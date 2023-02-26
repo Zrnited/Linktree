@@ -25,7 +25,7 @@ const Header = ({aside, setAside}) => {
   ];
 
   return (
-    <header className="px-2 py-3 shadow-md fixed top-0 left-0 right-0 bg-white">
+    <header className="px-2 py-3 shadow-md fixed top-0 left-0 right-0 bg-white z-30">
       <nav className="flex flex-row items-center justify-between lg:justify-around">
         <div>
           <h1 className="font-semibold text-xl tracking-widest capitalize text-blue-400">

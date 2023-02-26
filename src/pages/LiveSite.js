@@ -3,9 +3,19 @@ import Header from "../components/Header";
 import Aside from "../components/Aside";
 import adriana from "../assets/adriana.png";
 import Stats from "../components/Stats";
-import { AiFillCompass, AiFillBook } from "react-icons/ai";
+import { AiFillCompass, AiFillBook, AiOutlineArrowRight } from "react-icons/ai";
 import { BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
 import { motion } from "framer-motion";
+import News from "../components/News";
+import chemistry from "../assets/chemistry.jpeg";
+import physics from "../assets/physics.jpeg";
+import biology from "../assets/biology.jpeg";
+import mathematics from "../assets/mathematics.jpeg";
+import teaching from "../assets/teaching.jpeg";
+import jamesbrown from "../assets/jamesbrown.jpeg";
+import kateprincess from "../assets/kateprincess.png";
+import lesley from "../assets/lesley.png";
+import { Link } from "react-router-dom";
 
 const LiveSite = () => {
   const [aside, setAside] = React.useState(false);
@@ -58,6 +68,49 @@ const LiveSite = () => {
       header: "Over 200 courses",
       undertext: "You have a lifetime access to all the learning resources",
       className: "p-2 bg-pink-100 rounded-full text-lg",
+    },
+  ];
+
+  const news = [
+    {
+      image: chemistry,
+      headertext: "Chemistry Hack",
+      link: "https://chemistryhack.com",
+    },
+    {
+      image: physics,
+      headertext: "Physics Hack",
+      link: "https://physicshack.com",
+    },
+    {
+      image: biology,
+      headertext: "Biology Hack",
+      link: "https://biologyhack.com",
+    },
+    {
+      image: mathematics,
+      headertext: "Mathematics Hack",
+      link: "https://mathematicshack.com",
+    },
+  ];
+
+  const tutors = [
+    {
+      image: jamesbrown,
+      name: "James Brown",
+      title: "Chemistry Tutor",
+    },
+    {
+      image: kateprincess,
+      name: "Kate Princess",
+      title: "Physics Tutor",
+      height: '184px'
+    },
+    {
+      image: lesley,
+      name: "Lesley Charity",
+      title: "Mathematics Tutor",
+      height: '184px'
     },
   ];
 
@@ -136,10 +189,95 @@ const LiveSite = () => {
         </div>
       </section>
 
-      <section className="px-6 mt-10">
-        <h1 className="text-center font-bold text-2xl sm:text-left ml-12 md:text-4xl">
-          Recently added courses
+      <section className="px-6 mt-14">
+        <div className="flex gap-3 w-full items-center justify-around mb-6">
+          <h1 className="text-center font-bold text-lg sm:text-2xl md:text-left md:text-3xl xl:ml-10">
+            Recently added courses
+          </h1>
+          <div className="tooltipcontainer relative w-20 flex justify-center">
+            <Link to={"/news"}>
+              <button className="p-1 border-2 border-orange w-20 rounded-lg flex justify-center hover:bg-orange-100 transition delay-100">
+                <i>
+                  <AiOutlineArrowRight color="orange" />
+                </i>
+              </button>
+            </Link>
+            <span className="tooltip bg-black py-2 px-2 rounded-md text-white text-xs absolute -top-10 right-0 opacity-0 transition delay-100 whitespace-nowrap">
+              More news
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col gap-5 items-center sm:flex-row sm:flex-wrap sm:justify-center md:gap-10 lg:gap-4 lg:flex-nowrap xl:gap-10">
+          {news?.map((newsitem) => {
+            return (
+              <News
+                image={newsitem.image}
+                header={newsitem.headertext}
+                link={newsitem.link}
+              />
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="px-5 py-14 flex justify-evenly md:items-center">
+        <div className="flex flex-col gap-2 text-center md:text-left md:w-1/2 md:px-5">
+          <p className="text-customOrange font-semibold text-base sm:text-lg">
+            Customize with your schedule
+          </p>
+          <h1 className="text-xl sm:text-3xl">
+            Personalized <strong>Profesional 1-on-1 Online Tutor</strong> on
+            your <strong className="underline">Schedule</strong>
+          </h1>
+          <p className="text-sm leading-normal px-3 sm:text-base sm:mt-2 md:px-0">
+            Our Scheduling system allows for careful decision-making in terms of
+            time and student suitability, with our tutors available in a variety
+            of time slos entirely designed around each student's individual
+            pace.
+          </p>
+          <button className="text-white bg-orange-600 px-3 py-2 rounded-lg mt-5 hover:opacity-90 transition delay-100 md:w-32">
+            <Link className="text" to={"/"}>
+              Get Started
+            </Link>
+          </button>
+        </div>
+        <div className="hidden p-2 h-60 md:flex">
+          <img
+            className="rounded-lg w-auto h-full"
+            src={teaching}
+            alt="teach-pic"
+          />
+        </div>
+      </section>
+
+      <section className="p-16 bg-zinc-100">
+        <p className="text-customOrange font-semibold text-xs tracking-wider text-center uppercase sm:text-lg">
+          our professional tutors
+        </p>
+        <h1 className="text-center my-3">
+          Meet with our <br />{" "}
+          <strong className="capitalize">professional tutors</strong>
         </h1>
+
+        <div className="py-2 mt-5 flex flex-col gap-7 sm:flex-row sm:justify-center md:justify-center md:gap-20">
+          {tutors?.map((tutor, index) => {
+            return (
+              <div key={index} className="flex flex-col items-center">
+                <img
+                  className="rounded-full"
+                  width={"200px"}
+                  height={'184px'}
+                  src={tutor.image}
+                  alt="tutor-img"
+                />
+                <h1 className="capitalize font-bold text-lg tracking-wider">
+                  {tutor.name}
+                </h1>
+                <p className="capitalize">{tutor.title}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
     </>
   );

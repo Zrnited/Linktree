@@ -3,6 +3,15 @@ body {
   padding-bottom: 300px;
 }
 
+/* tooltip */
+.tooltipcontainer:hover .tooltip {
+  opacity: 1;
+}
+
+.tooltip:hover{
+  opacity: 0;
+}
+
 .hidebar {
   top: -100%;
 }

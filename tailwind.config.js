@@ -25,8 +25,13 @@ module.exports = {
         80: '80%',
         88: '88px',
         40: '40px',
-        10: '10px'
+        10: '10px',
+        250: '250px',
+        350: '350px',
+        100: '100px',
+        200: '200px'
       },
+
       height: {
         132: '132px',
         90: '93px',
@@ -37,7 +42,10 @@ module.exports = {
         2: '1px',
         10: '10px',
         400: '400px',
-        450: '450px'
+        450: '450px',
+        218: '218px',
+        160: '160px',
+        170: '170px',
       }
     },
     objectPosition: {
@@ -47,8 +55,11 @@ module.exports = {
     maxWidth: {
       750: '750px',
       200: '200px',
+      250: '250px',
       300: '300px',
-      400: '400px',
+      320: '320px',
+      370: '370px',
+      400: '400px'
     },
 
     // minWidth: {
@@ -58,7 +69,8 @@ module.exports = {
     borderColor: {
       lightblue: '#84CAFF',
       gray300: '#D0D5DD',
-      red300 : 'red'
+      red300 : 'red',
+      orange: 'orange'
     },
 
     borderWidth: {
