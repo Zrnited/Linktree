@@ -104,13 +104,13 @@ const LiveSite = () => {
       image: kateprincess,
       name: "Kate Princess",
       title: "Physics Tutor",
-      height: '184px'
+      height: "184px",
     },
     {
       image: lesley,
       name: "Lesley Charity",
       title: "Mathematics Tutor",
-      height: '184px'
+      height: "184px",
     },
   ];
 
@@ -266,7 +266,7 @@ const LiveSite = () => {
                 <img
                   className="rounded-full"
                   width={"200px"}
-                  height={'184px'}
+                  height={"184px"}
                   src={tutor.image}
                   alt="tutor-img"
                 />
