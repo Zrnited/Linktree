@@ -19,8 +19,8 @@ const Header = ({aside, setAside}) => {
       route: "/contact",
     },
     {
-      name: "About Us",
-      route: "/aboutus",
+      name: "Live Site",
+      route: "/livesite",
     },
   ];
 

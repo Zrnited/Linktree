@@ -5,6 +5,8 @@ import adriana from "../assets/adriana.png";
 import Stats from "../components/Stats";
 import { AiFillCompass, AiFillBook, AiOutlineArrowRight } from "react-icons/ai";
 import { BsFillHeartFill, BsFillPersonFill } from "react-icons/bs";
+import { BiChevronUp } from "react-icons/bi";
+import { BiChevronDown } from "react-icons/bi";
 import { motion } from "framer-motion";
 import News from "../components/News";
 import chemistry from "../assets/chemistry.jpeg";
@@ -16,9 +18,16 @@ import jamesbrown from "../assets/jamesbrown.jpeg";
 import kateprincess from "../assets/kateprincess.png";
 import lesley from "../assets/lesley.png";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const LiveSite = () => {
   const [aside, setAside] = React.useState(false);
+  const [toggle, setToggle] = React.useState({
+    join: false,
+    unmute: false,
+    mute: false,
+  });
+  // console.log(toggle);
 
   const stats = [
     {
@@ -113,6 +122,60 @@ const LiveSite = () => {
       height: "184px",
     },
   ];
+
+  const faqs = [
+    {
+      state: toggle.join,
+      question: "How can I join a class call?",
+      answer:
+        "We currently only need a zoom account to be able to join our class calls. Simple click on the button on our website here and enter your zoom details. You will then be taken to the zoom app directly or you can call via your browser",
+      name: "join",
+    },
+    {
+      state: toggle.mute,
+      question: "Can you unmute me so I can speak to people?",
+      answer:
+        "Yes definitely! An interactive class is a better class. With this in view, we allow our students to ask questions in class for better understanding of the topics taught and for meet-ups as well.",
+      name: "mute",
+    },
+    {
+      state: toggle.unmute,
+      question: "How can I pay for virtual classes?",
+      answer:
+        "We currently don't run virtual classes but good news is that the option will be available as soon as possible. You are free to pay with your dollar card also.",
+      name: "unmute",
+    },
+  ];
+
+  const switchToggle = (id) => {
+    // alert('Okay, I dey here!')
+    // console.log(id.name)
+    const current = id.name;
+
+    if (current === "join") {
+      setToggle((prevContact) => ({
+        ...prevContact,
+        join: !prevContact.join,
+        unmute: false,
+        mute: false,
+      }));
+    } else if (current === "mute") {
+      setToggle((prevContact) => ({
+        ...prevContact,
+        mute: !prevContact.mute,
+        join: false,
+        unmute: false,
+      }));
+    } else {
+      setToggle((prevContact) => ({
+        ...prevContact,
+        unmute: !prevContact.unmute,
+        join: false,
+        mute: false,
+      }));
+    }
+    // console.log(current)
+  };
 
   // console.log(stats);
   return (
@@ -251,25 +314,25 @@ const LiveSite = () => {
       </section>
 
       <section className="p-16 bg-zinc-100">
-        <p className="text-customOrange font-semibold text-xs tracking-wider text-center uppercase sm:text-lg">
+        <p className="text-customOrange font-semibold text-xs tracking-wider text-center uppercase sm:text-base">
           our professional tutors
         </p>
-        <h1 className="text-center my-3">
+        <h1 className="text-center my-3 sm:text-2xl">
           Meet with our <br />{" "}
           <strong className="capitalize">professional tutors</strong>
         </h1>
 
-        <div className="py-2 mt-5 flex flex-col gap-7 sm:flex-row sm:justify-center md:justify-center md:gap-20">
+        <div className="py-2 mt-5 flex flex-col gap-7 sm:flex-row sm:justify-evenly sm:gap-3 sm:flex-wrap md:justify-center md:gap-20">
           {tutors?.map((tutor, index) => {
             return (
               <div key={index} className="flex flex-col items-center">
-                <img
-                  className="rounded-full"
-                  width={"200px"}
-                  height={"184px"}
-                  src={tutor.image}
-                  alt="tutor-img"
-                />
+                <div className="w-200 h-184">
+                  <img
+                    className="rounded-full h-auto w-auto"
+                    src={tutor.image}
+                    alt="tutor-img"
+                  />
+                </div>
                 <h1 className="capitalize font-bold text-lg tracking-wider">
                   {tutor.name}
                 </h1>
@@ -279,6 +342,57 @@ const LiveSite = () => {
           })}
         </div>
       </section>
+
+      <section className="p-10">
+        <div className="flex flex-col gap-5 text-center mb-10 lg:items-center">
+          <h1 className="text-2xl font-bold capitalize lg:text-3xl">
+            frequently asked questions
+          </h1>
+          <p className="text-sm lg:text-lg lg:max-w-700">
+            You will find here the answers to the frequently asked questions and
+            our community guidelines that allow us to study in a motivating and
+            secure environment
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-5 items-center">
+          {faqs?.map((faq, index) => {
+            return (
+              <div
+                key={index}
+                className={
+                  !faq.state
+                    ? "px-2 pt-2 border-2 border-lightblue rounded-lg cursor-pointer hover:bg-blue-100 transition delay-100 w-full lg:max-w-700"
+                    : "px-2 pt-2 pb-3 border-2 border-lightblue rounded-lg lg:max-w-700"
+                }
+              >
+                <div className="flex justify-between w-full items-center mb-3">
+                  <p
+                    className={
+                      !faq.state
+                        ? "text-black lg:text-lg md:pl-2"
+                        : "text-black font-bold lg:text-lg md:pl-2"
+                    }
+                  >
+                    {faq.question}
+                  </p>
+                  <i
+                    className="cursor-pointer"
+                    onClick={() => switchToggle(faq)}
+                  >
+                    {!faq.state ? <BiChevronDown /> : <BiChevronUp />}
+                  </i>
+                </div>
+                {faq.state && (
+                  <p className="text-sm lg:text-base md:pl-2">{faq.answer}</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <Footer />
     </>
   );
 };

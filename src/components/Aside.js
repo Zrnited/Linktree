@@ -31,7 +31,7 @@ const Aside = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 w-1/2 bottom-0 bg-slate-200 shadow-md sm:hidden z-20">
+    <aside className="fixed left-0 top-0 w-1/2 bottom-0 bg-zinc-100 shadow-xl sm:hidden z-40">
       <div className="pt-5 flex flex-col h-full gap-2">
         <div>
           <h1 className="font-semibold text-xl tracking-widest capitalize text-blue-400 text-center">

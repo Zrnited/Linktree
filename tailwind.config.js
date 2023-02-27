@@ -46,6 +46,7 @@ module.exports = {
         218: '218px',
         160: '160px',
         170: '170px',
+        184: '184px'
       }
     },
     objectPosition: {
@@ -54,6 +55,7 @@ module.exports = {
 
     maxWidth: {
       750: '750px',
+      700: '700px',
       200: '200px',
       250: '250px',
       300: '300px',

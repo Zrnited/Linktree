@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Contact = () => {
 
@@ -85,8 +87,9 @@ const Contact = () => {
 
   return (
     <div className='w-full h-full flex flex-col justify-center mb-5'>
+        <Header />
         <ToastContainer />
-        <div className='w-90 flex flex-col place-self-center mt-12 md:max-w-750'>
+        <div className='w-90 flex flex-col place-self-center mt-20 md:max-w-750'>
             <h1 className='text-3xl tracking-wide mb-3 font-bold'>Contact Me</h1>
             <p className='text-gray-500 mb-8 inter400'>Hi there, contact me to ask me about anything you have in mind</p>
 
@@ -195,6 +198,7 @@ const Contact = () => {
                 </div>
             </div>
       </footer>
+      <Footer />
     </div>
   )
 }
